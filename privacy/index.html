@@ -1,0 +1,267 @@
+<!doctype html>
+<!--
+  LAWYER REVIEW: a lawyer should review this privacy policy before anyone relies on it.
+  Drafted by Claude on 2026-10-21 from the app as built: Canvas/app/PRODUCT-MODEL.md, Canvas/app/backend/REST.md
+  (sections 4, 5, 9, 19, 20, 21, 24, 26), Canvas/app/COACH.md section 13 and the server code. Points to settle:
+  1. Which company operates Boomkit. This page says Topaz Studios LLC; boomkit.app/privacy (2026-10-15) says
+     "Boomkit LLC" and claims the app collects social account passwords, which the app does not do.
+  2. The app server runs on Zack's Mac mini over plain HTTP on the home network today, so this page makes no claim of
+     encryption in transit. Add one once the server has HTTPS.
+  3. Gmail sends sign-in codes today. Update section 5 if the sender changes. Anthropic receives data only while the
+     AI key is installed. Stripe Connect and push notifications are planned, not live; add them before they ship.
+  4. The security (audit) log is never deleted and holds email addresses from sign-in requests. Decide a period.
+  5. The 30-day answer time in section 8 is a commitment; confirm it.
+  6. Added 2026-10-22 for the /creators/ sign-up form (Netlify Forms): the application bullet in section 2, Netlify in
+     section 5, and the retention line in section 6. No fixed retention period is promised for applications; decide
+     one (Canvas/team/funnel.md F10 suggests deleting "not now" applications after 180 days).
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Privacy policy: Topaz Studios LLC</title>
+  <meta name="description" content="How Topaz Studios LLC handles information on topazstudiosllc.com and in the Boomkit creator app.">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://topazstudiosllc.com/privacy/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/" translate="no">
+        <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><g stroke="#0b0b0c" stroke-width="0.75" stroke-linejoin="round"><path fill="#f5b14c" d="M4 15 11 7 14 15Z"/><path fill="#ffcf7a" d="M11 7H20L14 15Z"/><path fill="#ffe2a8" d="M20 7 26 15H14Z"/><path fill="#ffc35e" d="M20 7H29L26 15Z"/><path fill="#e39a33" d="M29 7 36 15H26Z"/><path fill="#eba13d" d="M4 15H14L20 34Z"/><path fill="#d0841f" d="M14 15H26L20 34Z"/><path fill="#a8630f" d="M26 15H36L20 34Z"/></g></svg>
+        <span>Topaz Studios LLC</span>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav">
+          <li class="nav-extra"><a href="/privacy/" aria-current="page">Privacy</a></li>
+          <li class="nav-extra"><a href="/terms/">Terms</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="legal">
+    <div class="wrap">
+      <h1>Privacy policy</h1>
+      <p class="effective">Effective October 22, 2026</p>
+      <p class="summary">This policy covers topazstudiosllc.com and the Boomkit creator app. It explains what we collect, why, who receives it and what you can ask us to do with it. We never ask for your social media passwords, and we don’t sell your information.</p>
+
+      <nav class="toc" aria-labelledby="toc-title">
+        <h2 id="toc-title">On this page</h2>
+        <ol>
+          <li><a href="#who">Who we are</a></li>
+          <li><a href="#website">This website</a></li>
+          <li><a href="#app">What the Boomkit app collects</a></li>
+          <li><a href="#use">How we use it</a></li>
+          <li><a href="#sharing">Who receives it</a></li>
+          <li><a href="#retention">How long we keep it</a></li>
+          <li><a href="#deletion">Deleting your account</a></li>
+          <li><a href="#rights">Your choices and rights</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#children">Age limit</a></li>
+          <li><a href="#location">Where we store it</a></li>
+          <li><a href="#changes">Changes to this policy</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </nav>
+
+      <section id="who" aria-labelledby="who-title">
+        <h2 id="who-title">1. Who we are</h2>
+        <p><strong translate="no">Topaz Studios LLC</strong> (“Topaz Studios”, “we”, “us”) is a Utah limited liability company at 882 W 700 N, Provo, UT 84601, United States. We run this website and build and operate Boomkit, an iPhone app that pays creators to post short videos for brand campaigns. Test versions of the app show the name Topaz on the home screen.</p>
+        <p>We decide how the information described here is used. Send privacy questions and requests to <a href="mailto:zack@topazstudiosllc.com">zack@topazstudiosllc.com</a>.</p>
+      </section>
+
+      <section id="website" aria-labelledby="website-title">
+        <h2 id="website-title">2. This website</h2>
+        <ul>
+          <li>topazstudiosllc.com uses no cookies, analytics, advertising trackers, third-party scripts or third-party fonts.</li>
+          <li>Our hosting provider keeps standard server logs (IP address, browser type, the page requested and the time) to deliver the site and protect it from abuse.</li>
+          <li>When you email us, we receive your address and your message and use them to reply. Our domain’s email forwarding runs through Namecheap and arrives in a Google Gmail inbox.</li>
+          <li>When you apply on our <a href="/creators/">creators page</a>, we receive what you enter: your name, email, phone number if you give one, TikTok and Instagram usernames, niche, the phone you use, a sample video link if you give one, city and state, how many days a week you can post, how you heard about us and any referral code. We use it to review your application and to email you about <span translate="no">Boomkit</span> campaigns. We don’t ask for passwords or ID numbers on that form. Our website host, Netlify, stores applications for us and can email each one to our inbox.</li>
+        </ul>
+      </section>
+
+      <section id="app" aria-labelledby="app-title">
+        <h2 id="app-title">3. What the Boomkit app collects</h2>
+
+        <h3>Account and sign-in</h3>
+        <ul>
+          <li>Your email address. You sign in with a 6-digit code we email to you. The code works for 10 minutes, and we store only a scrambled (hashed) form of it.</li>
+          <li>Sign-in sessions. We store a hashed form of your session token and the IP address the session came from. A session ends 30 days after you last use it. The app keeps the token in your iPhone’s Keychain.</li>
+          <li>Your acceptance of the creator terms: which version, when, and the IP address and app version at that moment.</li>
+        </ul>
+
+        <h3>Profile</h3>
+        <ul>
+          <li>Required: your first name and your confirmation that you are 18 or older.</li>
+          <li>Optional: last initial, time zone, birth year (we keep the year only), creator type, school, graduation year, up to 5 content niches and a profile photo for your creator page.</li>
+          <li>Optional shipping address (United States or Canada). We use it only to send you products for a campaign, and only our team sees it.</li>
+          <li>We don’t ask for your gender.</li>
+        </ul>
+
+        <h3>Posting accounts</h3>
+        <ul>
+          <li>The TikTok or Instagram usernames you register for each campaign.</li>
+          <li>To confirm a TikTok account is yours, you add a short code to its bio, and we read the public profile once.</li>
+          <li><strong>We never ask for, collect or store your social media passwords.</strong> The app doesn’t sign in to your social accounts.</li>
+        </ul>
+
+        <h3>Your posts and their public numbers</h3>
+        <ul>
+          <li>The links to the posts you paste into the app.</li>
+          <li>From public TikTok pages, read without signing in: each post’s views, likes, comments, shares, saves, caption, posting time, sound, hashtags, ad or paid-partnership label and public auto-captions (we keep the first 10 seconds of the transcript), plus your profile’s follower count, video count, total likes and bio.</li>
+          <li>We read a post every 15 minutes for its first 72 hours, hourly until day 7, then daily, and we stop 48 hours after its counting window closes. We read your profile once a day.</li>
+          <li>We can’t read Instagram posts automatically.</li>
+        </ul>
+
+        <h3>Numbers you add</h3>
+        <ul>
+          <li>Instagram Insights screenshots: the app reads the numbers on your phone and sends us only those numbers, a fingerprint (hash) of the image and its file size. The screenshot stays on your phone.</li>
+          <li>Country view numbers you type in for a campaign.</li>
+        </ul>
+
+        <h3>Video coach</h3>
+        <ul>
+          <li>If you allow Photos access, the app finds the video you posted and measures it on your phone: length, cuts, motion, when a face and on-screen text first appear, the on-screen text, the spoken words (using on-device speech recognition), loudness and brightness.</li>
+          <li>Only the measurements, short pieces of on-screen text, the spoken words and up to 5 small still images (40&nbsp;KB or less each) leave your phone, with the app version, iOS version and phone model. We keep the first 10 seconds of the spoken transcript and a word count, not the full transcript.</li>
+          <li><strong>The video and its audio never leave your phone.</strong> You can delete what the coach measured at any time in the app.</li>
+        </ul>
+
+        <h3>Money</h3>
+        <ul>
+          <li>Your earnings, wallet, cash-out requests and payout history.</li>
+          <li>Whether a payout method and a tax form are on file. The app doesn’t store bank or card details. Our team sends payouts today, and we collect tax forms such as a W-9 separately when the law requires them.</li>
+        </ul>
+
+        <h3>Referrals</h3>
+        <ul>
+          <li>Your referral code (built from your first name) and the people you refer.</li>
+          <li>To stop people from referring themselves, the app sends the identifier Apple assigns to our app on your phone. We store only a hashed form and use it for nothing else. It is not an advertising identifier.</li>
+        </ul>
+
+        <h3>Help, safety and settings</h3>
+        <ul>
+          <li>Support messages you send us, and reports and blocks you make.</li>
+          <li>Your notification settings. The app’s notifications come from your phone itself.</li>
+          <li>Questions you ask Ask Topa, the in-app helper. Built-in answers come from your own numbers, and we don’t store the question text.</li>
+        </ul>
+
+        <h3>Logs</h3>
+        <ul>
+          <li>Server logs with the IP address, the page or API address requested and your account number.</li>
+          <li>A security log of account events, such as sign-in code requests (which include the email address) and refused age checks.</li>
+        </ul>
+
+        <h3>What we don’t collect</h3>
+        <p>Social media passwords, precise location, contacts, your advertising identifier, or activity in other apps and websites. The app contains no third-party analytics or advertising code.</p>
+      </section>
+
+      <section id="use" aria-labelledby="use-title">
+        <h2 id="use-title">4. How we use it</h2>
+        <ul>
+          <li>To create your account, sign you in and keep your session.</li>
+          <li>To check each post you submit: that it is public, went up after you joined the campaign, came from your registered account, carries the ad disclosure and hasn’t been submitted before.</li>
+          <li>To count views and pay you by the campaign’s rules shown in the app.</li>
+          <li>To keep fake views out of pay. Our systems compare each post’s public numbers with its own history and with other posts. They can pause pay on a post while unusual views are checked, leave out views that fail and take back money paid on them from your future earnings. We never send you a bill. Repeated flags can limit cash-outs, and a person on our team makes any bigger decision. You can appeal a flagged post once by email.</li>
+          <li>To review campaign posts. Our team may look at your public posts to confirm the ad disclosure and the brand’s guidelines.</li>
+          <li>To give you coach tips and estimates, and to ship you products for a campaign.</li>
+          <li>To answer support requests, prevent fraud and abuse, keep pay and tax records, and meet legal obligations.</li>
+        </ul>
+        <p>We don’t sell personal information, share it for targeted advertising or use it to build advertising profiles.</p>
+      </section>
+
+      <section id="sharing" aria-labelledby="sharing-title">
+        <h2 id="sharing-title">5. Who receives it</h2>
+        <h3>Brands running a campaign</h3>
+        <p>Brands see campaign totals (views, videos and engagement) and links to the public posts. They see your display name only if you turn that on; otherwise you appear as a creator without a name. Brands never see your email address, account number or earnings.</p>
+
+        <h3>The public</h3>
+        <p>If you keep your creator page public, anyone can see it at its web address, and search engines can index it. It shows your display name, username, photo, creator type, niches, total views, number of live posts, the brands you posted for, and your top posts with links, caption excerpts and view counts. It never shows your earnings, address, email, birth year, school or last name. You can hide the page at any time.</p>
+
+        <h3>Service providers</h3>
+        <ul>
+          <li><strong>Google</strong> (Gmail) sends your sign-in codes and handles email between you and us.</li>
+          <li><strong>Anthropic</strong> provides optional AI features. While they are on: coach tips and the still images go to Anthropic to reword the tips; for an AI answer in Ask Topa, your question, the chat, your first name, time zone, balance, streak, campaigns, registered usernames and the numbers on your recent posts go to Anthropic; for AI hook ideas, which run only when you tap for them, your hook, script and the campaign brief go to Anthropic.</li>
+          <li><strong>Netlify</strong>, our website host, serves this website and stores creator applications. <strong>Namecheap</strong> forwards email for our domain.</li>
+        </ul>
+        <p>If we add a payment provider for payouts, it will collect your payout details directly, and we will update this policy before it starts.</p>
+
+        <h3>Other cases</h3>
+        <p>We share information when the law requires it, to protect people’s safety or our rights, or as part of a merger or sale of our business, in which case this policy keeps applying to your information.</p>
+      </section>
+
+      <section id="retention" aria-labelledby="retention-title">
+        <h2 id="retention-title">6. How long we keep it</h2>
+        <ul>
+          <li>Account and profile data: until you delete your account.</li>
+          <li>Creator applications from this website: while we fill campaign spots, or until you ask us to delete yours.</li>
+          <li>Sign-in codes: we delete the record 24 hours after the code expires.</li>
+          <li>Server logs: overwritten automatically as new logs fill them.</li>
+          <li>Backups: 1 copy a day, kept for 14 days. Deleted data can stay in a backup until that backup expires.</li>
+          <li>Pay and tax records: kept after you delete your account, for as long as tax and accounting law requires.</li>
+          <li>The security log: kept to protect accounts and the service.</li>
+        </ul>
+      </section>
+
+      <section id="deletion" aria-labelledby="deletion-title">
+        <h2 id="deletion-title">7. Deleting your account</h2>
+        <p>You can delete your account in the app at any time, or email us from the address you sign in with. The app shows what it deletes and what it keeps before you confirm.</p>
+        <ul>
+          <li><strong>We delete</strong> your sign-in sessions, profile, shipping address, photo, registered usernames, notification settings, progress and rewards data, coach measurements, phone fingerprints, support messages, reports and blocks. Your username becomes free.</li>
+          <li><strong>We keep</strong> your posts and their public view counts, the earnings ledger, wallet, cash-out requests and the security log, because they are pay and tax records. We link them to a payee record with the name and email used for payment, not to an account. We still pay any pending cash-out.</li>
+          <li>Your referral code stays reserved so nobody else can reuse it.</li>
+        </ul>
+      </section>
+
+      <section id="rights" aria-labelledby="rights-title">
+        <h2 id="rights-title">8. Your choices and rights</h2>
+        <ul>
+          <li>Edit your profile, hide your creator page and turn off any of the 3 notification types (new campaigns, earnings and streak, account updates) in the app. Sign-in codes always send.</li>
+          <li>Turn off Photos access in iOS Settings, and delete what the video coach measured.</li>
+          <li>Ask us for a copy of your information, a correction or deletion by emailing <a href="mailto:zack@topazstudiosllc.com">zack@topazstudiosllc.com</a>. Write from the email you sign in with so we can confirm it is you.</li>
+        </ul>
+        <p>We aim to answer within 30 days. Residents of California and some other states have specific privacy rights; we honor these requests for everyone and never treat you differently for making one.</p>
+      </section>
+
+      <section id="security" aria-labelledby="security-title">
+        <h2 id="security-title">9. Security</h2>
+        <p>We store sign-in codes and session tokens only in hashed form, keep the session token in your phone’s Keychain and limit access to our team. No storage or transfer method is perfectly secure, so we can’t promise that information will never be exposed. If a breach affects you, we will tell you as the law requires.</p>
+      </section>
+
+      <section id="children" aria-labelledby="children-title">
+        <h2 id="children-title">10. Age limit</h2>
+        <p>Boomkit is for people 18 and older. The app refuses sign-up when someone says they are under 18 and keeps none of that profile; the security log records the refusal. If we learn that someone under 18 has an account, we delete it.</p>
+      </section>
+
+      <section id="location" aria-labelledby="location-title">
+        <h2 id="location-title">11. Where we store it</h2>
+        <p>We store app data in the United States on computers we operate, and our service providers process it in the United States. If you use the app from Canada or elsewhere, your information moves to the United States.</p>
+      </section>
+
+      <section id="changes" aria-labelledby="changes-title">
+        <h2 id="changes-title">12. Changes to this policy</h2>
+        <p>We will post any change here with a new effective date. If a change matters to how we use your information, we will tell creators in the app or by email before it takes effect.</p>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">13. Contact</h2>
+        <p><span translate="no">Topaz Studios LLC</span><br>882 W 700 N<br>Provo, UT 84601<br>United States<br><a href="mailto:zack@topazstudiosllc.com">zack@topazstudiosllc.com</a></p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><g stroke="#0b0b0c" stroke-width="0.75" stroke-linejoin="round"><path fill="#f5b14c" d="M4 15 11 7 14 15Z"/><path fill="#ffcf7a" d="M11 7H20L14 15Z"/><path fill="#ffe2a8" d="M20 7 26 15H14Z"/><path fill="#ffc35e" d="M20 7H29L26 15Z"/><path fill="#e39a33" d="M29 7 36 15H26Z"/><path fill="#eba13d" d="M4 15H14L20 34Z"/><path fill="#d0841f" d="M14 15H26L20 34Z"/><path fill="#a8630f" d="M26 15H36L20 34Z"/></g></svg>
+      <p><span class="nowrap">© 2026 <span translate="no">Topaz Studios LLC</span></span> <span class="nowrap">· Provo, Utah</span> <span class="nowrap">· <a href="/privacy/" aria-current="page">Privacy</a> · <a href="/terms/">Terms</a></span></p>
+    </div>
+  </footer>
+</body>
+</html>
