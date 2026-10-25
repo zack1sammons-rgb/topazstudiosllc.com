@@ -1,19 +1,19 @@
 <!doctype html>
 <!--
   LAWYER REVIEW: a lawyer should review this privacy policy before anyone relies on it.
-  Drafted by Claude on 2026-10-21 from the app as built: Canvas/app/PRODUCT-MODEL.md, Canvas/app/backend/REST.md
-  (sections 4, 5, 9, 19, 20, 21, 24, 26), Canvas/app/COACH.md section 13 and the server code. Points to settle:
+  Drafted by Claude on 2026-10-21 from the app as built; revised 2026-10-24 against the code (Canvas/app/appstore/
+  PRIVACY-LABELS.md lists each claim and where the code does it). Points to settle:
   1. Which company operates Boomkit. This page says Topaz Studios LLC; boomkit.app/privacy (2026-10-15) says
      "Boomkit LLC" and claims the app collects social account passwords, which the app does not do.
-  2. The app server runs on Zack's Mac mini over plain HTTP on the home network today, so this page makes no claim of
-     encryption in transit. Add one once the server has HTTPS.
-  3. Gmail sends sign-in codes today. Update section 5 if the sender changes. Anthropic receives data only while the
-     AI key is installed. Stripe Connect and push notifications are planned, not live; add them before they ship.
+  2. The app server runs on Zack's Mac mini, so this page makes no claim of encryption in transit. Add one once the
+     public server's HTTPS address is live.
+  3. Gmail sends sign-in codes today. Update section 5 if the sender changes. AI is off in version 1.0 (no key on the
+     server). Before any AI feature turns on: an in-app consent screen that names Anthropic, then a policy update
+     (APP-CHECKLIST.md). Stripe Connect and push notifications are planned, not live; add them before they ship.
   4. The security (audit) log is never deleted and holds email addresses from sign-in requests. Decide a period.
   5. The 30-day answer time in section 8 is a commitment; confirm it.
-  6. Added 2026-10-22 for the /creators/ sign-up form (Netlify Forms): the application bullet in section 2, Netlify in
-     section 5, and the retention line in section 6. No fixed retention period is promised for applications; decide
-     one (Canvas/team/funnel.md F10 suggests deleting "not now" applications after 180 days).
+  6. Creator applications arrive by email (the /creators/ form opens the applicant's mail app). No fixed retention
+     period is promised; decide one (Canvas/team/funnel.md F10 suggests deleting "not now" applications after 180 days).
 -->
 <html lang="en">
 <head>
@@ -50,7 +50,7 @@
   <main id="main" class="legal">
     <div class="wrap">
       <h1>Privacy policy</h1>
-      <p class="effective">Effective October 22, 2026</p>
+      <p class="effective">Last updated: October 24, 2026</p>
       <p class="summary">This policy covers topazstudiosllc.com and the Boomkit creator app. It explains what we collect, why, who receives it and what you can ask us to do with it. We never ask for your social media passwords, and we don’t sell your information.</p>
 
       <nav class="toc" aria-labelledby="toc-title">
@@ -74,7 +74,7 @@
 
       <section id="who" aria-labelledby="who-title">
         <h2 id="who-title">1. Who we are</h2>
-        <p><strong translate="no">Topaz Studios LLC</strong> (“Topaz Studios”, “we”, “us”) is a Utah limited liability company at 882 W 700 N, Provo, UT 84601, United States. We run this website and build and operate Boomkit, an iPhone app that pays creators to post short videos for brand campaigns. Test versions of the app show the name Topaz on the home screen.</p>
+        <p><strong translate="no">Topaz Studios LLC</strong> (“Topaz Studios”, “we”, “us”) is a Utah limited liability company at 882 W 700 N, Provo, UT 84601, United States. We run this website and build and operate Boomkit, an iPhone app that pays creators to post short videos for brand campaigns.</p>
         <p>We decide how the information described here is used. Send privacy questions and requests to <a href="mailto:zack@topazstudiosllc.com">zack@topazstudiosllc.com</a>.</p>
       </section>
 
@@ -82,9 +82,9 @@
         <h2 id="website-title">2. This website</h2>
         <ul>
           <li>topazstudiosllc.com uses no cookies, analytics, advertising trackers, third-party scripts or third-party fonts.</li>
-          <li>Our hosting provider keeps standard server logs (IP address, browser type, the page requested and the time) to deliver the site and protect it from abuse.</li>
+          <li>GitHub Pages hosts this website. GitHub keeps standard server logs (IP address, browser type, the page requested and the time) to deliver the site and protect it from abuse.</li>
           <li>When you email us, we receive your address and your message and use them to reply. Our domain’s email forwarding runs through Namecheap and arrives in a Google Gmail inbox.</li>
-          <li>When you apply on our <a href="/creators/">creators page</a>, we receive what you enter: your name, email, phone number if you give one, TikTok and Instagram usernames, niche, the phone you use, a sample video link if you give one, city and state, how many days a week you can post, how you heard about us and any referral code. We use it to review your application and to email you about <span translate="no">Boomkit</span> campaigns. We don’t ask for passwords or ID numbers on that form. Our website host, Netlify, stores applications for us and can email each one to our inbox.</li>
+          <li>When you apply on our <a href="/creators/">creators page</a>, we receive what you enter: your name, email, phone number if you give one, TikTok and Instagram usernames, niche, the phone you use, a sample video link if you give one, city and state, how many days a week you can post, how you heard about us and any referral code. We use it to review your application and to email you about <span translate="no">Boomkit</span> campaigns. We don’t ask for passwords or ID numbers on that form. The form doesn’t send anything to a website server: it opens your own email app with your answers filled in, and we receive them only if you send that email. Applications then sit in our Gmail inbox.</li>
         </ul>
       </section>
 
@@ -95,14 +95,16 @@
         <ul>
           <li>Your email address. You sign in with a 6-digit code we email to you. The code works for 10 minutes, and we store only a scrambled (hashed) form of it.</li>
           <li>Sign-in sessions. We store a hashed form of your session token and the IP address the session came from. A session ends 30 days after you last use it. The app keeps the token in your iPhone’s Keychain.</li>
-          <li>Your acceptance of the creator terms: which version, when, and the IP address and app version at that moment.</li>
+          <li>Your acceptance of the creator terms: which version, when, and the IP address, app version and the app’s user agent (its name, version and iOS version) at that moment.</li>
+          <li>When you last used the app.</li>
         </ul>
 
         <h3>Profile</h3>
         <ul>
           <li>Required: your first name and your confirmation that you are 18 or older.</li>
-          <li>Optional: last initial, time zone, birth year (we keep the year only), creator type, school, graduation year, up to 5 content niches and a profile photo for your creator page.</li>
+          <li>Optional: last initial, birth year (we keep the year only), creator type, school, graduation year, up to 5 content niches and a profile photo for your creator page.</li>
           <li>Optional shipping address (United States or Canada). We use it only to send you products for a campaign, and only our team sees it.</li>
+          <li>Collected automatically: your phone’s time zone (for example America/Denver), sent when you sign up so days and paydays match your clock. We don’t use it to locate you.</li>
           <li>We don’t ask for your gender.</li>
         </ul>
 
@@ -150,12 +152,17 @@
         <ul>
           <li>Support messages you send us, and reports and blocks you make.</li>
           <li>Your notification settings. The app’s notifications come from your phone itself.</li>
-          <li>Questions you ask Ask Topa, the in-app helper. Built-in answers come from your own numbers, and we don’t store the question text.</li>
+          <li>Questions you ask Ask Topa, the in-app helper. Its answers come from built-in rules and your own numbers, and we don’t store the question text.</li>
+        </ul>
+
+        <h3>Tips and feedback</h3>
+        <ul>
+          <li>Our server can take a short tip you write for a campaign, or feedback you write on another creator’s campaign video (up to 1,000 characters). Version 1.0 of the app has no screen for either. If you write one, we store the text with your account, our team reviews each tip, and the creator you wrote about can read your feedback. We delete tips and feedback you wrote or received when you delete your account.</li>
         </ul>
 
         <h3>Logs</h3>
         <ul>
-          <li>Server logs with the IP address, the page or API address requested and your account number.</li>
+          <li>Server logs with the IP address, the page or API address requested, the app version and your account number.</li>
           <li>A security log of account events, such as sign-in code requests (which include the email address) and refused age checks.</li>
         </ul>
 
@@ -188,8 +195,8 @@
         <h3>Service providers</h3>
         <ul>
           <li><strong>Google</strong> (Gmail) sends your sign-in codes and handles email between you and us.</li>
-          <li><strong>Anthropic</strong> provides optional AI features. While they are on: coach tips and the still images go to Anthropic to reword the tips; for an AI answer in Ask Topa, your question, the chat, your first name, time zone, balance, streak, campaigns, registered usernames and the numbers on your recent posts go to Anthropic; for AI hook ideas, which run only when you tap for them, your hook, script and the campaign brief go to Anthropic.</li>
-          <li><strong>Netlify</strong>, our website host, serves this website and stores creator applications. <strong>Namecheap</strong> forwards email for our domain.</li>
+          <li><strong>No AI provider.</strong> In this version of Boomkit, none of your information goes to any AI provider. Ask Topa, coach tips and hook checks run on built-in rules on our server and your phone. If we turn on an AI feature later, the app will ask your permission first and name the provider, and we will update this policy before it starts.</li>
+          <li><strong>GitHub</strong> (GitHub Pages) serves this website. <strong>Namecheap</strong> forwards email for our domain.</li>
         </ul>
         <p>If we add a payment provider for payouts, it will collect your payout details directly, and we will update this policy before it starts.</p>
 
@@ -201,7 +208,7 @@
         <h2 id="retention-title">6. How long we keep it</h2>
         <ul>
           <li>Account and profile data: until you delete your account.</li>
-          <li>Creator applications from this website: while we fill campaign spots, or until you ask us to delete yours.</li>
+          <li>Creator applications you email us from this website: while we fill campaign spots, or until you ask us to delete yours.</li>
           <li>Sign-in codes: we delete the record 24 hours after the code expires.</li>
           <li>Server logs: overwritten automatically as new logs fill them.</li>
           <li>Backups: 1 copy a day, kept for 14 days. Deleted data can stay in a backup until that backup expires.</li>
@@ -214,8 +221,8 @@
         <h2 id="deletion-title">7. Deleting your account</h2>
         <p>You can delete your account in the app at any time, or email us from the address you sign in with. The app shows what it deletes and what it keeps before you confirm.</p>
         <ul>
-          <li><strong>We delete</strong> your sign-in sessions, profile, shipping address, photo, registered usernames, notification settings, progress and rewards data, coach measurements, phone fingerprints, support messages, reports and blocks. Your username becomes free.</li>
-          <li><strong>We keep</strong> your posts and their public view counts, the earnings ledger, wallet, cash-out requests and the security log, because they are pay and tax records. We link them to a payee record with the name and email used for payment, not to an account. We still pay any pending cash-out.</li>
+          <li><strong>We delete</strong> your sign-in sessions, profile, shipping address, photo, registered usernames, notification settings, progress and rewards data, coach measurements, phone fingerprints, support messages, reports and blocks, terms acceptances, tips and feedback. Your username becomes free.</li>
+          <li><strong>We keep</strong> your posts and their public view counts, the record of each post’s ad disclosure check, the earnings ledger, wallet, cash-out requests and the security log, because they are pay, tax and advertising-law records. We link them to a payee record with the name and email used for payment, not to an account. We still pay any pending cash-out.</li>
           <li>Your referral code stays reserved so nobody else can reuse it.</li>
         </ul>
       </section>
